@@ -50,7 +50,7 @@ gem 'rack-timeout'
 gem 'premailer-rails'
 gem 'nokogiri'
 if ENV['USE_LOCAL_SPREE']
-  gem 'asset_sync'              ,path:   '../asset_sync'
+  gem 'asset_sync'              ,path:   '../asset_sync', group: :production
   gem 'spree'                   ,path:   '../spree'                              ,branch: '2-3-stable'
   gem 'spree_auth_devise'       ,path:   '../spree_auth_devise'                  ,branch: '2-3-stable'
   gem 'spree_i18n'              ,path:   '../spree_i18n'                         ,branch: '2-3-stable'
@@ -58,7 +58,7 @@ if ENV['USE_LOCAL_SPREE']
   gem 'spree_bootstrap_frontend',path:   '../spree_bootstrap_frontend'           ,branch: '2-3-stable'
   gem 'spree_reviews'           ,path:   '../spree_reviews'                      ,branch: '2-3-stable'
 else
-  gem 'asset_sync'              ,github: 'fenixdecorare/asset_sync'
+  gem 'asset_sync'              ,github: 'fenixdecorare/asset_sync', group: :production
   gem 'spree'                   ,github: 'fenixdecorare/spree'                   ,branch: '2-3-stable'
   gem 'spree_auth_devise'       ,github: 'fenixdecorare/spree_auth_devise'       ,branch: '2-3-stable'
   gem 'spree_i18n'              ,github: 'fenixdecorare/spree_i18n'              ,branch: '2-3-stable'
