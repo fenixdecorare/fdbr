@@ -1,0 +1,46 @@
+
+$color-1:              #f7f7f7; // c2-white
+$color-2:              #006666; // c6
+$color-3:              #dc0000; // c3-red3
+$color-4:              #660000; // c5-base
+$color-5:              #a10000; // c4-red4
+$color-6:              #999900; // c7-info
+
+// Body base colors
+$color-body-bg:        $color-1;
+$color-body-text:      #333333; // c1-cinza
+$color-headers:        $color-6;
+$color-link:           $color-4;
+$color-link-hover:     $color-3;
+$color-link-active:    $color-4;
+$color-link-focus:     $color-4;
+$color-link-visited:   $color-3;
+$color-border:         very-light($color-4, 12);
+
+// Basic flash colors
+$color-success:        #006633;
+$color-notice:         #cc9966;
+$color-error:          #e45353;
+
+// Table colors
+$color-tbl-odd:        $color-1;
+$color-tbl-even:       very-light($color-4, 4);
+$color-tbl-thead:      very-light($color-4, 4);
+
+// Button colors
+$color-btn-bg:         $color-4;
+$color-btn-text:       $color-1;
+$color-btn-hover-bg:   $color-3;
+$color-btn-hover-text: $color-1;
+
+// Select2 select field colors
+$color-sel-bg:         $color-4;
+$color-sel-text:       $color-body-text;
+$color-sel-hover-bg:   $color-3;
+$color-sel-hover-text: $color-body-text;
+
+// Text inputs colors
+$color-txt-brd:        lighten($color-body-text, 60);
+$color-txt-text:       $color-body-text;
+$color-txt-hover-brd:  $color-4;
+

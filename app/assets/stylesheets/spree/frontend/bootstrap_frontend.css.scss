@@ -1,53 +1,50 @@
-//Add your custom bootstrap variables here, see https://github.com/twbs/bootstrap-sass/blob/master/vendor/assets/stylesheets/bootstrap/_variables.scss for full list of variables.
+$brand-primary:      #660000;
+$brand-success:      #660000;
+$brand-info:         #999900;
+$brand-warning:      #cc9966;
+$brand-danger:       #e45353;
+$brand-red3:         #dc0000;
 
-$icon-font-path: "../../bootstrap/";
+$btn-default-bg:     #660000;
+$btn-default-color:  #333333;
+
+$btn-default-border: $btn-default-bg;
+$btn-primary-border: $brand-primary;
+$btn-success-border: $brand-success;
+$btn-info-border:    $brand-info;
+$btn-warning-border: $brand-warning;
+$btn-danger-border:  $brand-danger;
+
+$border-radius-base:  2px;
+$border-radius-large: 4px;
+$border-radius-small: 1px;
+
+$font-family-sans-serif: "Ubuntu", sans-serif;
+$font-family-serif:      "Ubuntu", serif;
+$font-family-monospace:  "Ubuntu Mono", monospace;
+
+@import "bootstrap-sprockets";
 @import "bootstrap";
 
-// -- Spree Custom Header and Footer ---------------------
-#spree-header {
-  background: #1c5c92 asset-url('spree_header.jpg') center center;
-  background-size: cover;
-  margin-bottom: $line-height-computed;
-  #header {
-    background: rgba(9, 22, 33, 0.4);
-    padding: $line-height-computed 0;
+@mixin fenix-button-variant($cor) {
+  &:hover,
+  &:focus,
+  &:active,
+  &.active,
+  .open > &.dropdown-toggle {
+    background-color: $cor;
+    border-color: $cor;
   }
-  #logo {
-    margin-bottom: 10px;
-    img {
-      width: 306px;
-    }
-  }
-  .nav a {
-    color: #fff;
-    &:hover {
-      background:rgba(9, 22, 33, 0.4);
-    }
-  }
-  .navbar {
-    border: 0;
-    margin-bottom: 0;
+  .badge {
+    background-color: $cor;
   }
 }
-#spree-footer {
-  background: $gray-dark;
-  padding-top: $padding-base-horizontal;
-  margin-top: $line-height-computed;
-  color: #fff;
+.btn-default {
+  @include fenix-button-variant($brand-red3);
 }
-
-// -- Spree Layout Custom Rules -------------------------
-
-//TODO, bug #6
-.alert-error, .alert-registration_error { @extend .alert-danger; }
-.alert-alert { @extend .alert-info; }
-
-.product-body {
-  height: 170px;
+.btn-primary {
+  @include fenix-button-variant($brand-red3);
 }
-.progress-steps {
-  margin-top: $line-height-computed;
-}
-h1 {
-  margin-bottom: 30px;
+.btn-success {
+  @include fenix-button-variant($brand-red3);
 }
