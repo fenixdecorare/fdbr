@@ -2,7 +2,9 @@
 
 # Version of your assets, change this if you want to expire all your assets.
 Rails.application.config.assets.version = '1.0'
+Rails.application.config.assets.compress = true
 
 # Precompile additional assets.
 # application.js, application.css, and all non-JS/CSS in app/assets folder are already added.
-# Rails.application.config.assets.precompile += %w( search.js )
+#Rails.application.config.assets.paths << Rails.root.join("app/assets/images/logo")
+#Rails.application.config.assets.precompile << /logo\/logo-loja-casadosquadros\.(?:svg)\z/
