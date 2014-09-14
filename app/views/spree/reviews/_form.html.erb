@@ -1,0 +1,22 @@
+<%= form_for review, url: product_reviews_path(product), html: { method: :post, role: "form" } do |f| %>
+  <%= render "spree/shared/error_messages", target: review %>
+  <div class="row"><div class="form-group col-sm-12">
+    <%= f.label :rating %><br/>
+    <%= render "spree/reviews/stars", stars: review.rating, edit_enabled: true %>
+  </div></div>
+  <div class="row"><div class="form-group col-sm-6">
+    <%= f.label :name, class: "sr-only" %>
+    <%= f.text_field :name, placeholder: "Seu Nome", class: "form-control" %>
+  </div></div>
+  <div class="row"><div class="form-group col-sm-6">
+    <%= f.label :title, class: "sr-only" %>
+    <%= f.text_field :title, placeholder: "Título", class: "form-control" %>
+  </div></div>
+  <div class="row"><div class="form-group col-sm-6">
+    <%= f.label :review, class: "sr-only" %>
+    <%= f.text_area :review, placeholder: "Comentário", wrap: "virtual", rows: "10", class: "form-control" %>
+  </div></div>
+  <div class="row"><div class="form-group col-sm-6">
+    <%= f.submit Spree.t(:submit_your_review), class: "btn btn-primary" %>
+  </div></div>
+<% end %>

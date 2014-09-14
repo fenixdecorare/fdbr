@@ -1,0 +1,16 @@
+<div id="reviews" class="panel panel-default">
+  <div class="panel-heading"><h3 class="panel-title"><%= Spree.t(:reviews) %></h3></div>
+  <% if Spree::Reviews::Config[:include_unapproved_reviews] == false and @product.reviews.approved.count == 0 %>
+    <div class="panel-body"><p class="reviews-none"><%= Spree.t('no_reviews_available') %></p></div>
+  <% else %>
+    <table class="table">
+    <% for review in (Spree::Reviews::Config[:track_locale] ? @product.reviews.localized(I18n.locale) : @product.reviews).default_approval_filter.preview %>
+      <tr><td><%= render 'spree/shared/review', review: review %></td></tr>
+    <% end %>
+    </table>
+  <% end %>
+</div>
+<div class="well well-sm"><%= render 'spree/shared/rating', product: @product, review: 0 %></div>
+<% if !Spree::Reviews::Config[:require_login] || spree_current_user %>
+  <%= link_to Spree.t('write_your_own_review'), new_product_review_path(@product), class: "btn btn-success", rel: "nofollow,noindex" %>
+<% end %>

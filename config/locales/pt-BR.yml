@@ -101,6 +101,14 @@ pt-BR:
         name: Nome
       spree/return_authorization: 
         amount: Quantidade
+      spree/review: 
+        created_at: Data
+        ip_address: IP
+        name: "Seu nome"
+        rating: Avaliação
+        review: Comentário
+        title: Título
+        user: Usuário
       spree/role: 
         name: Nome
       spree/state: 
@@ -215,6 +223,9 @@ pt-BR:
       spree/return_authorization: 
         one: "Autorização de Retorno"
         other: "Autorização de Retornos"
+      spree/review: 
+        one: "um comentário"
+        other: "%{count} comentários"
       spree/role: 
         one: Função
         other: Funções
@@ -287,6 +298,9 @@ pt-BR:
       success: "Autorizado sobre %{kind} com sucesso."
     omniauth_callbacks: 
       success: "Você está logado agora com a sua conta do %{kind}."
+    sessions: 
+      signed_in: "Login realizado com sucesso."
+      signed_out: "Logout realizado com sucesso."
     unlocks: 
       send_instructions: "Em alguns minutos você recebrá um email com instruções para liberar sua conta."
       unlocked: "Sua conta foi liberada com sucesso. Você já está logado."
@@ -304,7 +318,7 @@ pt-BR:
       inactive_signed_up: "Você se cadastrou com sucesso. Contudo, você não pode logar porque sua conta %{reason}."
       signed_up: "Bem vindo! Você foi cadastrado com sucesso!"
       updated: "Sua conta foi atualizada."
-    sessions: 
+    user_sessions: 
       signed_in: "Login realizado com sucesso."
       signed_out: "Logout realizado com sucesso."
   errors: 
@@ -378,6 +392,7 @@ pt-BR:
         properties: Propriedades
         prototypes: Protótipos
         reports: Relatórios
+        review_management: Comentários
         taxonomies: Taxonomias
         taxons: Táxons
         users: Usuários
@@ -412,7 +427,8 @@ pt-BR:
     analytics_desc_list_3: "Absolutamente nenhum código para instalar"
     analytics_desc_list_4: "Completamente gratuito!"
     analytics_trackers: "Rastreadores de Análise"
-    and: E
+    and: e
+    anonymous: Anônimo
     api: 
       access: "Acesso à API"
       clear_key: "Tecla Limpar"
@@ -440,6 +456,7 @@ pt-BR:
       unauthorized: "Você não está autorizado a executar a ação."
     approve: aprovar
     approved_at: "Aprovado na"
+    approved_reviews: Aprovadas
     approver: Aprovador
     are_you_sure: "Tem Certeza?"
     are_you_sure_delete: "Tem certeza que deseja remover este registro?"
@@ -454,10 +471,12 @@ pt-BR:
     authorization_failure: "Falha na Autorização"
     auto_capture: "Captura Auto"
     available_on: "Disponível em"
+    average_customer_rating: Avaliação média
     average_order_value: "Valor médio do pedido"
     avs_response: "Resposta do AVS"
     back: Voltar
     back_end: Backend
+    back_reviews: "Voltar para os comentários"
     back_to_adjustments_list: "Voltar a lista de Ajustes"
     back_to_authentication_methods_list: "Voltar Para Lista de Métodos de Autenticação"
     back_to_images_list: "Voltar a lista de Imagens"
@@ -490,10 +509,14 @@ pt-BR:
     balance_due: "Saldo Devedor"
     base_amount: "Valor Base"
     base_percent: "Percentual de base"
+    based_upon_review_count: 
+      one: "com base numa avaliação"
+      other: "com base em %{count} avaliações"
     bill_address: "Endereço da Conta"
     billing: Faturamento
     billing_address: "Endereço de Cobrança"
     both: Ambos
+    by: por
     calculator: Calculadora
     calculator_settings_warning: "Se você alterar o tipo de calculadora, deve-se primeiro confirmar a alteração antes de editar as configurações."
     cancel: Cancelar
@@ -521,7 +544,7 @@ pt-BR:
     choose_dashboard_locale: "Escolha idioma do painel"
     choose_location: "Escolha o local"
     city: Cidade
-    click_and_drag_on_the_products_to_sort_them: Clique e arraste sobre os produtos para classificá-los
+    click_and_drag_on_the_products_to_sort_them: "Clique e arraste sobre os produtos para classificá-los"
     clone: Cópia
     close: Fechar
     close_all_adjustments: "Fechar todos os Ajustes"
@@ -622,6 +645,7 @@ pt-BR:
     editing_promotion: "Editando Promoção"
     editing_property: "Editando Propriedade"
     editing_prototype: "Editando Protótipo"
+    editing_review_for_html: "Editar comentário para %{link}"
     editing_shipping_category: "Editando Categoria de Entrega"
     editing_shipping_method: "Editando Método de Entrega"
     editing_state: "Editando Estado"
@@ -640,6 +664,8 @@ pt-BR:
     ending_in: Finalizando
     environment: Ambiente
     error: Erro
+    error_approve_review: "Erro na aprovação do comentário"
+    error_no_product: "O produto analisado não existe mais"
     errors: 
       messages: 
         could_not_create_taxon: "Não foi possível criar o taxon"
@@ -669,6 +695,8 @@ pt-BR:
     expiration: Validade
     extension: Extensão
     failed_payment_attempts: "Tentativas fracassadas de pagamento"
+    feedback: Feedback
+    feedback_review_for: "Comentário: &#39;%{review}&#39;"
     filename: "Nome do arquivo"
     fill_in_customer_info: "Por favor insira as informações do cliente"
     filter_results: "Filtrar resultados"
@@ -682,9 +710,11 @@ pt-BR:
     flat_rate_per_item: "Aliquota por item"
     flat_rate_per_order: "Aliquota por pedido"
     flexible_rate: "Aliquita flexivel"
+    for: para
     forgot_password: "Esqueci a senha"
     free_shipping: "Entrega grátis"
     free_shipping_amount: "-"
+    from: "a partir de"
     front_end: "Front End"
     gateway: Gateway
     gateway_config_unavailable: "Gateway não disponível para este ambiente"
@@ -721,7 +751,8 @@ pt-BR:
     incl: incl.
     included_in_price: "Incluso no preço"
     included_price_validation: "Não pode ser selecionado a menos que você tenha escolhido zona de imposto padrão"
-    info_number_of_skus_not_shown: 
+    info_approve_review: "Comentário aprovado"
+    info_number_of_skus_not_shown:
       one: "e um outro"
       other: "e %{count} outros"
     info_product_has_multiple_skus: "Este produto tem %{count} variantes:"
@@ -754,6 +785,7 @@ pt-BR:
     last_name: Sobrenome
     last_name_begins_with: "Sobrenome Começa Com:"
     learn_more: "Aprenda Mais"
+    leave_us_a_review_for: "Por favor, deixe uma avaliação e comentário para o produto '%{name}'"
     lifetime_stats: "Estatísticas Lifetime"
     line_item_adjustments: "Ajustes de itens de linha"
     list: Lista
@@ -851,6 +883,7 @@ pt-BR:
     no_promotions_found: "Não existem promoções"
     no_resource_found: "Não existe %{resource}"
     no_results: "Não existem resultados"
+    no_reviews_available: "Nenhum comentário foi escrito para este produto."
     no_rules_added: "Nenhuma regra adicionada"
     no_shipping_method_selected: "Nenhum método de envio selecionado."
     no_shipping_methods_found: "Nenhum método de envio encontrado"
@@ -932,6 +965,7 @@ pt-BR:
     order_total: "Total do Pedido"
     order_updated: "Pedido Atualizado"
     orders: Pedidos
+    out_of_5: "de 5"
     out_of_stock: Esgotado
     overview: Resumo
     package_from: "pacote de"
@@ -1051,6 +1085,7 @@ pt-BR:
     quantity_returned: "Quantidade Retornada"
     quantity_shipped: "Quantidade Enviada"
     rate: Taxa
+    rating: classificação
     reason: Razões
     receive: Receber
     receive_stock: "Receber estoque"
@@ -1076,6 +1111,8 @@ pt-BR:
     return_quantity: "Quantidade a ser devolvida"
     returned: Devolvido
     review: Revisar
+    review_successfully_submitted: "Comentário foi enviado com sucesso"
+    reviews: "Avaliações & Comentários"
     risk: Risco
     risk_analysis: "Análise de Risco"
     risky: Risky
@@ -1115,7 +1152,7 @@ pt-BR:
     ship_total: "Total no envio"
     shipment: Distribuição
     shipment_adjustments: "Ajustes da Remessa"
-    shipment_details: "Desde %{stock_location} via %{shipping_method}" 
+    shipment_details: "Desde %{stock_location} via %{shipping_method}"
     shipment_inc_vat: "Entrega incluindo VAT"
     shipment_mailer: 
       shipped_email: 
@@ -1180,8 +1217,21 @@ pt-BR:
     special_instructions: "Instruções especiais"
     split: Dividir
     spree_gateway_error_flash_for_checkout: "Existe um problema com seus dados de pagamento. por favor, verifique seus dados e tente novamente."
+    spree_reviews:
+      feedback_rating: "Avalie os comentários"
+      include_unapproved: "Incluir comentários não aprovados em listagens"
+      manage_review_settings: "Controlar a exibição de comentários"
+      preview_size: "Tamanho dos trechos de comentários"
+      require_login: "Requerer que o usuário estar logado"
+      review_settings: "Configurações de revisão"
+      show_email: "Mostrar os endereços de e-mail"
+      track_locale: "Seguir o local do usuário"
     ssl: 
       change_protocol: "Por favor troque para HTTP (ao invés de HTTPS) e faça essa requisição novamente."
+    star: 
+      one: "1"
+      other: "%{count}"
+    stars: Estrelas
     start: Início
     state: Estado
     state_based: "Estado de Origem"
@@ -1203,6 +1253,8 @@ pt-BR:
     store: Loja
     street_address: Endereço
     street_address_2: "Endereço (compl.)"
+    submit_your_review: "Enviar comentário"
+    submitted_on: "Enviado em"
     subtotal: Sub-total
     subtract: Subtrair
     success: Sucesso
@@ -1258,6 +1310,7 @@ pt-BR:
     type: Tipo
     type_to_search: "Tipo de busca"
     unable_to_connect_to_gateway: "Impossível se conectar no gateway"
+    unapproved_reviews: "Não aprovadas"
     under_price: "Sob %{price}"
     unlock: Destravar
     unrecognized_card_type: "Tipo de cartão desconhecido"
@@ -1286,14 +1339,20 @@ pt-BR:
     variant_placeholder: "Escolha um produto"
     variants: Variantes
     version: Versão
+    voice: 
+      one: "1 voz"
+      other: "%{count} vozes"
     void: Vazio
+    was_this_review_helpful: "Este comentário foi útil para você?"
     weight: Peso
     what_is_a_cvv: "O que é o código de segurança do cartão de crédito (CVV)?"
     what_is_this: "O que é isto?"
     width: Largura
+    write_your_own_review: "Escreva seu próprio comentário"
     year: Ano
     you_have_no_orders_yet: "Você não possui pedidos ainda."
     you_have_signed_in_with_these_services: "Você se cadastrou com estes serviços"
+    you_must_enter_value_for_rating: "Você deve digitar um valor para classificação."
     your_cart_is_empty: "O carrinho está vazio"
     your_order_is_empty_add_product: "Seu pedido está vazio, por favor procure e adicione um produto"
     zip: "Codigo postal"
