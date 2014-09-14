@@ -345,3 +345,16 @@ prm.each do |name, variant_attrs|
     end
   end
 end
+
+# include non-approved reviews in (public) listings
+Spree::Reviews::Config[:include_unapproved_reviews]=false
+# control how many reviews are shown in summaries etc.
+Spree::Reviews::Config[:preview_size]=3
+# show a reviewer's email address
+Spree::Reviews::Config[:show_email]=false
+# show helpfullness rating form elements
+Spree::Reviews::Config[:feedback_rating]=false
+# require login to post reviews
+Spree::Reviews::Config[:require_login]=true
+# whether to keep track of the reviewer's locale
+Spree::Reviews::Config[:track_locale]=false
