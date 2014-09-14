@@ -50,7 +50,7 @@ gem 'rack-timeout'
 gem 'premailer-rails'
 gem 'nokogiri'
 if ENV['USE_LOCAL_SPREE']
-  gem 'asset_sync'              ,path:   '../asset_sync', group: :production
+  gem 'asset_sync'              ,path:   '../asset_sync'
   gem 'spree'                   ,path:   '../spree'                              ,branch: '2-3-stable'
   gem 'spree_auth_devise'       ,path:   '../spree_auth_devise'                  ,branch: '2-3-stable'
   gem 'spree_i18n'              ,path:   '../spree_i18n'                         ,branch: '2-3-stable'
