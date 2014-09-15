@@ -5,7 +5,7 @@
       <div id="product-variants" class="form-group col-sm-7">
         <h4 class="product-section-title"><%= Spree.t(:variants) %></h4>
         <div class="radio">
-        <table class="table table-condensed table-bordered table-hover">
+        <table class="table table-bordered table-hover">
         <% @product.variants_and_option_values(current_currency).each_with_index do |variant, index| %>
           <tr><td>
           <%= label_tag "variant_id" do %>
