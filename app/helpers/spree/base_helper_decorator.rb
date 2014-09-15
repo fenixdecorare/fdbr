@@ -10,4 +10,15 @@ Spree::BaseHelper.module_eval do
     @body_class ||= content_for?(:sidebar) ? '' : ''
     @body_class
   end
+
+  # human readable list of variant options
+  def fenix_variant_options(v, options={})
+    values = v.option_values.sort do |a, b|
+      a.option_type.position <=> b.option_type.position
+    end
+    values.to_a.map! do |ov|
+      "#{ov.presentation}"
+    end
+    values.to_sentence({ words_connector: ", ", two_words_connector: ", " })
+  end
 end
