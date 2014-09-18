@@ -21,4 +21,13 @@ Spree::BaseHelper.module_eval do
     end
     values.to_sentence({ words_connector: ", ", two_words_connector: ", " })
   end
+
+  # human readable list of product options
+  def fenix_product_options_types(p)
+    values=p.option_types.to_a.map! do |ot|
+      "#{ot.presentation}"
+    end
+    values.to_sentence({ words_connector: ", ", two_words_connector: ", " })
+  end
+
 end
